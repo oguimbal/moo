@@ -1,5 +1,7 @@
 ![](cow.png)
 
+## This is just a Deno-compatible version of [moo](https://github.com/no-context/moo)
+
 Moo!
 ====
 
@@ -34,12 +36,10 @@ Oh, and it [avoids parsing RegExps by itself](https://hackernoon.com/the-madness
 Usage
 -----
 
-First, you need to do the needful: `$ npm install moo`, or whatever will ship this code to your computer. Alternatively, grab the `moo.js` file by itself and slap it into your web page via a `<script>` tag; moo is completely standalone.
-
 Then you can start roasting your very own lexer/tokenizer:
 
 ```js
-    const moo = require('moo')
+    import moo from "https://deno.land/x/moo@0.5.1.1/index.ts";
 
     let lexer = moo.compile({
       WS:      /[ \t]+/,
@@ -380,4 +380,3 @@ Contributing
 Do check the [FAQ](https://github.com/tjvr/moo/issues?q=label%3Aquestion).
 
 Before submitting an issue, [remember...](https://github.com/tjvr/moo/blob/master/.github/CONTRIBUTING.md)
-

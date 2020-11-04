@@ -1,13 +1,8 @@
-(function(root, factory) {
-  if (typeof define === 'function' && define.amd) {
-    define([], factory) /* global define */
-  } else if (typeof module === 'object' && module.exports) {
-    module.exports = factory()
-  } else {
-    root.moo = factory()
-  }
-}(this, function() {
-  'use strict';
+// @ts-nocheck
+
+// This file has been copied from https://github.com/no-context/moo
+// - BSD 3-Clause License
+
 
   var hasOwnProperty = Object.prototype.hasOwnProperty
   var toString = Object.prototype.toString
@@ -589,12 +584,10 @@
   }
 
 
-  return {
+  export default {
     compile: compile,
     states: compileStates,
     error: Object.freeze({error: true}),
     fallback: Object.freeze({fallback: true}),
     keywords: keywordTransform,
   }
-
-}));
