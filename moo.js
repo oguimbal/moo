@@ -256,7 +256,7 @@
     return {regexp: combined, groups: groups, fast: fast, error: errorRule || defaultErrorRule}
   }
 
-  function compile(rules) {
+  export function compile(rules) {
     var result = compileRules(toRules(rules))
     return new Lexer({start: result}, 'start')
   }
@@ -270,7 +270,7 @@
       throw new Error("pop must be 1 (in token '" + g.defaultType + "' of state '" + name + "')")
     }
   }
-  function compileStates(states, start) {
+  export function compileStates(states, start) {
     var all = states.$all ? toRules(states.$all) : []
     delete states.$all
 
@@ -329,7 +329,7 @@
     return new Lexer(map, start)
   }
 
-  function keywordTransform(map) {
+  export function keywords(map) {
     var reverseMap = Object.create(null)
     var byLength = Object.create(null)
     var types = Object.getOwnPropertyNames(map)
@@ -584,10 +584,5 @@
   }
 
 
-  export default {
-    compile: compile,
-    states: compileStates,
-    error: Object.freeze({error: true}),
-    fallback: Object.freeze({fallback: true}),
-    keywords: keywordTransform,
-  }
+  export const error = Object.freeze({error: true});
+  export const fallback = Object.freeze({fallback: true});
