@@ -39,7 +39,7 @@ Usage
 Then you can start roasting your very own lexer/tokenizer:
 
 ```js
-    import moo from "https://deno.land/x/moo@0.5.1-deno/mod.ts";
+    import moo from "https://deno.land/x/moo@0.5.1-deno.1/mod.ts";
 
     let lexer = moo.compile({
       WS:      /[ \t]+/,
